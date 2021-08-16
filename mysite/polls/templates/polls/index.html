@@ -1,11 +1,32 @@
-{% if latest_question_list %}
-  <ul>
-    {% for question in latest_question_list %}
-      <li>
-        <a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-{% else %}
-  <p>No polls are available.</p>
-{% endif %}
+{% extends "mysite/base.html" %}
+{% block content %}
+
+  <div class="container mt-4 mb-5">
+    <div class="bg-light rounded-container p-5">
+      <div class="container-fluid py-5">
+        <h1 class="display-3 fw-bold">Technical Quiz</h1>
+        <p style="font-size: 25px;" class="lead">Welcome to the Quiz page. Select a Question below!
+        </p>
+        <button class="round-btn" type="button">Example button</button>
+        {% if latest_question_list %}
+          <ul style="list-style:none; padding-left:0" class="mt-5">
+            {% for question in latest_question_list %}
+
+              <a style="text-decoration: none; color:black" href="{% url 'polls:detail' question.id %}">
+                <li class='list-item'>
+                  <p>{{ question.question_text }}</p>
+                </li>
+              </a>
+
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p>No polls are available.</p>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

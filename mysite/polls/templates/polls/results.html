@@ -1,0 +1,60 @@
+{% extends "mysite/base.html" %}
+{% block content %}
+  {% load static %}
+
+  <div style="margin-bottom: 8.2rem;" class="container mt-4">
+    <div class="bg-light rounded-container p-5">
+      <div class="container-fluid py-5 ">
+
+        <h1>{{ question.question_text }}</h1>
+
+        {% if not selected_choice.correct %}
+          <p style="color:red; margin-left:0.5rem ">Wrong Answer!</p>
+          <ul style="list-style-type: none; padding-left: 0; margin-top:1rem;">
+            {% for choice in question.choice_set.all %}
+
+              {% if choice.choice_text == selected_choice.choice_text %}
+                <li style="background-color:rgb(255, 94, 79);" class="list-item">
+                  <p>{{ choice.choice_text }}<img style="float: right; color: green; " class="img-small" src="{% static 'mysite/x.png' %}"></p>
+                </li>
+              {% else %}
+                <li class="list-item">
+                  <p>{{ choice.choice_text }}</p>
+                </li>
+              {% endif %}
+
+            {% endfor %}
+          </ul>
+          <a href="{% url 'polls:detail' question_id %}">
+            <button class="round-btn">Retry Question</button>
+          </a>
+        {% endif %}
+
+        {% if selected_choice.correct %}
+            <p style="color:green; margin-left:0.5rem">Right Answer!</p>
+            <ul style="list-style-type: none; padding-left: 0; margin-top:1rem">
+            {% for choice in question.choice_set.all %}
+
+              {% if choice.choice_text == selected_choice.choice_text %}
+                <li style="background-color:rgb(145, 255, 122);" class="list-item">
+                  <p>{{ choice.choice_text }}<img style="float: right;" class="img-small" src="{% static 'mysite/checkmark.png' %}"></p>
+                </li>
+              {% else %}
+                <li class="list-item">
+                  <p>{{ choice.choice_text }}</p>
+                </li>
+              {% endif %}
+
+            {% endfor %}
+          </ul>
+          <a href="{% url 'polls:index' %}">
+            <button class="round-btn">Try Another Question</button>
+          </a>
+
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

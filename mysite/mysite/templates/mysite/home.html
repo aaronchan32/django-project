@@ -1,0 +1,53 @@
+{% extends "mysite/base.html" %}
+{% block content %}
+  <!DOCTYPE html>
+  {% load static %}
+  <html lang="en">
+
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+    </head>
+
+    <body>
+
+      <div class="jumbotron text-center jumbotron-fluid">
+        <div class="container">
+          <div class="container py-4">
+
+            <div class="bg-light rounded-container  ">
+              <div class="container-fluid py-5">
+                <h1 class="display-3 fw-bold">Final Project</h1>
+                <p style="font-size: 25px;" class="lead">Welcome to the home page.</p>
+                <a href="{% url "admin:index" %}" target="_blank">
+                <button class="round-btn" type="button">Admin Site</button>
+                </a>
+              </div>
+            </div>
+
+            <div style="margin-bottom:6rem;" class="row align-items-md-stretch mt-5">
+              <div class="col-md-6">
+                <div class="h-100 p-5 bg-light rounded-container">
+                  <h2>Thank you Bootstrap</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat nam amet incidunt tenetur aliquid consequuntur, deleniti dolor rerum vel. Alias mollitia earum aliquid consectetur id totam! Fugiat ad odit possimus?</p>
+                  <button class="round-btn" type="button"> Example Button</button>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="h-100 p-5 bg-light rounded-container">
+                  <h2>Thank you VSCode</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda eaque a fuga ipsum dolores debitis aspernatur, velit ex, quaerat vitae officiis deserunt fugit. Molestias porro quasi sunt nesciunt quaerat nisi.</p>
+                  <button class="round-btn" type="button">Example button</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+
+  </html>
+
+{% endblock %}

@@ -1,0 +1,125 @@
+.img-small {
+    height:2rem;
+}
+
+.active {
+    border-bottom: 2px solid white;
+}
+
+.navbar {
+    height: 4rem;
+}
+
+#navbarScroll {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translatex(-50%);
+            transform: translatex(-50%);
+}
+
+.nav-item {
+    margin-right: 2rem;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.nav-item:hover {
+    -webkit-transform: translateY(-0.2em);
+    transform: translateY(-0.2em);
+}
+
+#lightbulb {
+    background: url("/static/mysite/lightbulb.png");
+    color:blue;
+    height:5rem;
+    width: 5rem;
+    z-index: 5;
+}
+
+
+p {
+    font-size: 20px;
+}
+
+.rounded-container {
+    border-radius: 2rem;
+    box-shadow: 0 0.5em 0.5em -0.4em rgb(65, 65, 65);
+}
+
+.round-btn {
+    background-color: #4790ff;
+    border-color: #4790ff;
+    border-style: solid;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-align: center;
+    font-size: 1.15rem;
+    border-radius: 2rem;
+    -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+    line-height: 1.5rem;
+  }
+  
+  .round-btn:hover {
+    -webkit-box-shadow: 0 0.5em 0.5em -0.4em rgb(65, 65, 65);
+            box-shadow: 0 0.5em 0.5em -0.4em rgb(65, 65, 65);
+    -webkit-transform: translateY(-0.25em);
+            transform: translateY(-0.25em);
+  }
+
+  .list-item {
+    border-radius: 3rem;
+    background-color: rgb(228, 228, 228);
+    padding: 1rem;
+    padding-bottom: 0.3rem;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+    line-height: 1.5rem;
+  }
+
+
+  .list-item:hover {
+    -webkit-box-shadow: 0 0.5em 0.5em -0.4em rgb(65, 65, 65);
+            box-shadow: 0 0.5em 0.5em -0.4em rgb(65, 65, 65);
+    -webkit-transform: translateY(-0.25em);
+            transform: translateY(-0.25em);
+  }
+
+
+input[type=radio] {
+    transform: scale(1.2);
+    height: 1rem;
+    
+}
+
+label {
+    display: block;
+    
+}
+
+ul li {
+    font-size: 1.5rem;
+}
+
+.custom-radio input {
+    display: none;
+}
+
+.custom-radio input:checked + .list-item {
+    background-color: #4791ff65;
+
+}
+
+.active .icon2{
+    display: inline;
+}
+
+.active .icon1{
+    display: none;
+}
+
+.icon2{
+    display :none;
+}

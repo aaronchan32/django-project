@@ -1,6 +1,48 @@
-<h1>{{ question.question_text }}</h1>
-<ul>
-{% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }}</li>
-{% endfor %}
-</ul>
+{% extends "mysite/base.html" %}
+{% block content %}
+
+  <div style="margin-bottom: 10.5rem;" class="container mt-4">
+    <div class="bg-light rounded-container p-5">
+      <div class="container-fluid py-5">
+
+        <form action="{% url 'polls:submit' question.id %}" method="post">
+          {% csrf_token %}
+          <fieldset>
+            <legend>
+              <h1>{{ question.question_text }}</h1>
+            </legend>
+            {% if error_message %}
+
+              <p style="color:red">Error: Please select a choice before submitting.</p>
+
+            {% endif %}
+
+            <div class="mt-2 mb-2">
+
+              {% for choice in question.choice_set.all %}
+                <div class="">
+                  <label class="custom-radio">
+                    <input style="white-space: normal" type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+                    <div class="list-item">
+                      <span class="radio-btn">
+                      <p>{{ choice.choice_text }}</p>
+                    </span>
+                    </div>
+                  </label>
+                </div>
+
+              {% endfor %}
+
+            </div>
+
+          </fieldset>
+
+          <button type="submit" value="Submit" class="round-btn">Submit</button>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
