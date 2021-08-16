@@ -1,1 +1,1 @@
-# django-project
+# Intel and Hack the Hood Fellowship Final Project
